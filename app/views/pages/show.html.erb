@@ -2,9 +2,7 @@
 
 <%= render @page %>
 
-  <%= turbo_frame_tag 'show_block' do %>
-    <%= render @block %>
-  <% end %>
+  <%= turbo_frame_tag 'show_block', src: update_block_page_path(@page) %>
   <%= link_to 'Show a different block', update_block_page_path(@page), 'data-turbo-frame': 'show_block' %>
 
 <div>
