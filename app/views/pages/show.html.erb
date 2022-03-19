@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @page %>
+
+  <%= turbo_frame_tag 'show_block' do %>
+    <%= render @block %>
+  <% end %>
+  <%= link_to 'Show a different block', update_block_page_path(@page), 'data-turbo-frame': 'show_block' %>
+
+<div>
+  <%= link_to "Edit this page", edit_page_path(@page), 'data-turbo-target': 'show_block' %> |
+  <%= link_to "Back to pages", pages_path %>
+
+  <%= button_to "Destroy this page", @page, method: :delete %>
+</div>
