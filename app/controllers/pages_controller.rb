@@ -8,10 +8,9 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
-    @block = Block.order('RANDOM()').first
   end
 
-  # GET /pages/1 or /pages/1.json
+  # GET /pages/1/update_block
   def update_block
     @block = Block.order('RANDOM()').first
     render partial: 'show_block'
